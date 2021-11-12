@@ -25,14 +25,8 @@ export default class MyDocument extends Document {
 }
 
 MyDocument.getInitialProps = async (ctx) => {
-  const originalRenderPage = ctx.renderPage
   const cache = createEmotionCache()
   const { extractCriticalToChunks } = createEmotionServer(cache)
-
-  // ctx.renderPage = () =>
-  //   originalRenderPage({
-  //     enhanceApp: (App) => (props) => <App emotionCache={cache} {...props} />,
-  //   })
 
   const initialProps = await Document.getInitialProps(ctx)
   const emotionStyles = extractCriticalToChunks(initialProps.html)

@@ -1,3 +1,9 @@
+import { Typography } from '@mui/material'
+
 export default function Home() {
-  return <div>Oi Boi</div>;
+  return (
+    <Typography variant="h1" sx={{ textAlign: 'center' }}>
+      Oi Boi
+    </Typography>
+  )
 }

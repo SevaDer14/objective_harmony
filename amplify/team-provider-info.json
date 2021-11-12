@@ -1,0 +1,15 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-objectiveharmony-dev-170825-authRole",
+      "UnauthRoleArn": "arn:aws:iam::919784546161:role/amplify-objectiveharmony-dev-170825-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::919784546161:role/amplify-objectiveharmony-dev-170825-authRole",
+      "Region": "eu-north-1",
+      "DeploymentBucketName": "amplify-objectiveharmony-dev-170825-deployment",
+      "UnauthRoleName": "amplify-objectiveharmony-dev-170825-unauthRole",
+      "StackName": "amplify-objectiveharmony-dev-170825",
+      "StackId": "arn:aws:cloudformation:eu-north-1:919784546161:stack/amplify-objectiveharmony-dev-170825/c608c760-43d2-11ec-887d-0e70f1f560a6",
+      "AmplifyAppId": "d30vz03bxxl75b"
+    }
+  }
+}

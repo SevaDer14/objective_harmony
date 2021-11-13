@@ -31,10 +31,11 @@ test:
     preTest:
       commands:
         - npm install
+        - npm install @babel/core
         - npm install wait-on
         - npm install mocha mochawesome mochawesome-merge mochawesome-report-generator
         - npm install pm2
-        - npx pm2 start npm -- start 
+        - npm run start
         - 'npx wait-on http://localhost:3000'
     test:
       commands:

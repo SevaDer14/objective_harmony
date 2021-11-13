@@ -32,10 +32,11 @@ test:
       commands:
         - npm install
         - npm install mocha mochawesome mochawesome-merge mochawesome-report-generator
+        - "npx serve -l 3000 -s build & npx wait-on http://127.0.0.1:3000"
     test:
       commands:
-        - npx start-test 'npm run start' 3000 'npx cypress run --reporter mochawesome --reporter-options "reportDir=cypress/report/mochawesome-report,overwrite=false,html=false,json=true,timestamp=mmddyyyy_HHMMss"'
+        - 'npx cypress run --record --reporter mochawesome --reporter-options "reportDir=cypress/report/mochawesome-report,overwrite=false,html=false,json=true,timestamp=mmddyyyy_HHMMss"'
     postTest:
       commands:
-        - npx mochawesome-merge cypress/report/mochawesome-report/mochawesome*.json > cypress/report/mochawesome.json
-        - npx pm2 kill
+        - npx mochawesome-merge@4 cypress/report/mochawesome-report/*.json > cypress/report/mochawesome.json
+        - npx kill-port 3000

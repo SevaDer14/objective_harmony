@@ -4,6 +4,6 @@ describe('displays "Hello World" on root route', () => {
   })
 
   it('displays greeting', () => {
-    cy.contains('Oi Boi').should('be.visible')
+    cy.contains('Hello World').should('be.visible')
   })
 })

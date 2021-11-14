@@ -35,8 +35,6 @@
     "eslint": "^7.32.0",
     "eslint-config-next": "12.0.3",
     "eslint-config-prettier": "^8.3.0",
-    "mocha": "^9.1.3",
-    "mochawesome": "^4.1.0",
     "prettier": "^2.4.1",
     "start-server-and-test": "^1.14.0",
     "typescript": "^4.4.4"

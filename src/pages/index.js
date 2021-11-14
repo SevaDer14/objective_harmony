@@ -1,8 +1,5 @@
-import Head from 'next/head'
-import Image from 'next/image'
-
 export default function Home() {
   return (
-    <div>Oi Boi</div>
+    <div data-cy='greeting-message'>Oi Boi</div>
   )
 }

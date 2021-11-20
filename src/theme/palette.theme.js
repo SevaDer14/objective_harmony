@@ -2,7 +2,8 @@ import { red } from '@mui/material/colors'
 
 const palette = {
   primary: {
-    main: '#19C6FF',
+    main: '#19B2FF',
+    semi: '#19B2FF44',
   },
   secondary: {
     main: '#19857b',

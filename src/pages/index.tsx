@@ -1,10 +1,18 @@
-import { Typography } from '@mui/material'
+import { Button, Typography } from '@mui/material'
+import Link from 'next/link'
+import PageHeader from '../components/PageHeader'
 
 const HomePage = () => {
   return (
-    <Typography variant="h1" sx={{ textAlign: 'center' }}>
-      Hello World
-    </Typography>
+    <>
+      <PageHeader text="Objective Harmony" />
+      <Typography variant="body1">
+        The place for next generation microtonal and experimental music.
+      </Typography>
+      <Button component={Link} href="/zen_explorer">
+        Zen Explorer
+      </Button>
+    </>
   )
 }
 

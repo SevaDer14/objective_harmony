@@ -6,12 +6,14 @@ const HomePage = () => {
   return (
     <>
       <PageHeader text="Objective Harmony" />
-      <Typography variant="body1">
+      <Typography data-cy="description" variant="body1">
         The place for next generation microtonal and experimental music.
       </Typography>
-      <Button component={Link} href="/zen_explorer">
-        Zen Explorer
-      </Button>
+      <Link href="/zen_explorer" passHref>
+        <Button data-cy="zen-explorer-cta" variant="contained">
+          Zen Explorer
+        </Button>
+      </Link>
     </>
   )
 }

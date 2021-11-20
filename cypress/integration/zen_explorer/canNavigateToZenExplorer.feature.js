@@ -1,9 +1,10 @@
-const pageHeader = cy.contains('Zen Explorer')
-
 describe('displays "Zen Explorer" app on dedicated route', () => {
+  let pageHeader = undefined
+
   context('access by route', () => {
     beforeEach(() => {
       cy.visit('/zen_explorer')
+      pageHeader = cy.contains('Zen Explorer')
     })
 
     it('displays page header', () => {

@@ -1,8 +1,9 @@
-const pageHeader = cy.contains('Objective Harmony')
-
 describe('User Can See Main Page', () => {
+  let pageHeader = undefined
+
   beforeEach(() => {
     cy.visit('/')
+    pageHeader = cy.contains('Objective Harmony')
   })
 
   it('displays page header and content', () => {

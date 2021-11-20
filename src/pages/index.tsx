@@ -1,6 +1,6 @@
 import { Typography } from '@mui/material'
 
-const Home = () => {
+const HomePage = () => {
   return (
     <Typography variant="h1" sx={{ textAlign: 'center' }}>
       Hello World
@@ -8,4 +8,4 @@ const Home = () => {
   )
 }
 
-export default Home
+export default HomePage

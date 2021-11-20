@@ -1,11 +1,7 @@
-import React from 'react'
+import PageHeader from '../../components/PageHeader'
 
-const index = () => {
-  return (
-    <div>
-      
-    </div>
-  )
+const ZenExplorerPage = () => {
+  return <PageHeader text="Zen Explorer" />
 }
 
-export default index
+export default ZenExplorerPage

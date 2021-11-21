@@ -6,33 +6,33 @@ describe('Displays Main Page', () => {
     })
   })
 
-  context('if accessed by route', () => {
-    it('should display logo in the app header', () => {
+  context('correctly', () => {
+    it('displays logo in the app header', () => {
       cy.get('[data-cy=header-logo]').should('be.visible')
     })
 
-    it('should highlight correct navigation tab', () => {
+    it('highlights correct navigation tab', () => {
       cy.get('@homeTab').should('have.class', 'Mui-selected')
     })
 
-    it('should display placeholder content', () => {
+    it('displays placeholder content', () => {
       cy.get('[data-cy=page-header]').should('be.visible')
       cy.get('[data-cy=description]').should('be.visible')
       cy.get("[data-cy='/zen_explorer-cta']").should('be.visible')
     })
   })
 
-  context('if accessed by navigation menu from zen explorer page', () => {
+  context('by accessing with navigation menu', () => {
     beforeEach(() => {
       cy.visit('/zen_explorer')
       cy.get('@homeTab').click()
     })
 
-    it('should have correct route', () => {
+    it('has correct route', () => {
       cy.url().should('contain', '/')
     })
 
-    it('should highlight correct navigation tab', () => {
+    it('highlights correct navigation tab', () => {
       cy.get('@homeTab').should('have.class', 'Mui-selected')
     })
   })

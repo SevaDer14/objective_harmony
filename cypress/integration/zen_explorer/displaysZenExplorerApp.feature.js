@@ -6,42 +6,42 @@ describe('Displays "Zen Explorer" App', () => {
     })
   })
 
-  context('if accessed by route', () => {
-    it('should display page header', () => {
+  context('correctly', () => {
+    it('displays page header', () => {
       cy.get('[data-cy=page-header]').should('be.visible')
     })
 
-    it('should highlight correct navigation tab', () => {
+    it('highlights correct navigation tab', () => {
       cy.get('@zenExplorerTab').should('have.class', 'Mui-selected')
     })
   })
 
-  context('if accessed by cta on main page', () => {
+  context('by accessing with cta on main page', () => {
     beforeEach(() => {
       cy.visit('/')
       cy.get("[data-cy='/zen_explorer-cta']").click()
     })
 
-    it('should have correct route', () => {
+    it('has correct route', () => {
       cy.url().should('contain', '/zen_explorer')
     })
 
-    it('should highlight correct navigation tab', () => {
+    it('highlights correct navigation tab', () => {
       cy.get('@zenExplorerTab').should('have.class', 'Mui-selected')
     })
   })
 
-  context('if accessed by navigation menu from main page', () => {
+  context('by accessing with navigation menu', () => {
     beforeEach(() => {
       cy.visit('/')
       cy.get('@zenExplorerTab').click()
     })
 
-    it('should have correct route', () => {
+    it('has correct route', () => {
       cy.url().should('contain', '/zen_explorer')
     })
 
-    it('should highlight correct navigation tab', () => {
+    it('highlights correct navigation tab', () => {
       cy.get('@zenExplorerTab').should('have.class', 'Mui-selected')
     })
   })

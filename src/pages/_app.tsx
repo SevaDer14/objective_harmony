@@ -27,7 +27,7 @@ const MyApp = ({
       <ThemeProvider theme={theme}>
         <CssBaseline />
         <RecoilRoot>
-          <AppHeader logo="Objective Harmony">
+          <AppHeader>
             <NavMenu />
           </AppHeader>
           <Container maxWidth="lg">

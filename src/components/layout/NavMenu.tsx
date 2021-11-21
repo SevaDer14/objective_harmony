@@ -1,5 +1,11 @@
 import React, { useState } from 'react'
-import { Tabs, Tab } from '@mui/material'
+import { Tabs } from '@mui/material'
+import NavTab from 'src/components/NavTab'
+
+const navigation = [
+  { label: 'Home', href: '/' },
+  { label: 'Zen Explorer', href: '/zen_explorer' },
+]
 
 const NavMenu = () => {
   const [tab, setTab] = useState(0)
@@ -12,13 +18,13 @@ const NavMenu = () => {
     <Tabs
       value={tab}
       onChange={handleChange}
-      indicatorColor="secondary"
+      indicatorColor="primary"
       textColor="inherit"
-      variant="fullWidth"
-      aria-label="full width tabs example"
+      aria-label="navigation menu"
     >
-      <Tab label="Home" />
-      <Tab label="Zen Explorer" />
+      {navigation.map((tab) => (
+        <NavTab href={tab.href} label={tab.label} />
+      ))}
     </Tabs>
   )
 }

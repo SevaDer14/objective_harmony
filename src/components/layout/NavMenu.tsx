@@ -1,31 +1,27 @@
-import React from 'react'
-import { useRecoilState } from 'recoil'
-import { activeTabState } from 'src/state/recoil/state'
+import React, { useEffect, useState } from 'react'
+import { useRouter } from 'next/router'
 import { Tabs } from '@mui/material'
 import NavTab from 'src/components/NavTab'
-
-const navigation = [
-  { label: 'Home', href: '/' },
-  { label: 'Zen Explorer', href: '/zen_explorer' },
-]
+import { navigation, navigationTabs } from 'src/data/navigation'
 
 const NavMenu = () => {
-  const [activeTab, setActiveTab] = useRecoilState(activeTabState)
+  const { asPath } = useRouter()
+  const currentTab = navigation[asPath].value
+  const [activeTab, setActiveTab] = useState(currentTab)
 
-  const handleChange = (event, newValue) => {
-    setActiveTab(newValue)
-  }
+  useEffect(() => {
+    setActiveTab(currentTab)
+  }, [asPath])
 
   return (
     <Tabs
       data-cy="navigation-tabs"
       value={activeTab}
-      onChange={handleChange}
       indicatorColor="primary"
       textColor="inherit"
       aria-label="navigation menu"
     >
-      {navigation.map((tab, index) => (
+      {navigationTabs.map((tab, index) => (
         <NavTab href={tab.href} label={tab.label} key={`navTab-${index}`} />
       ))}
     </Tabs>

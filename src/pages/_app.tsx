@@ -8,7 +8,6 @@ import createEmotionCache from 'src/createEmotionCache.js'
 import { Container } from '@mui/material'
 import AppHeader from 'src/components/layout/AppHeader'
 import NavMenu from 'src/components/layout/NavMenu'
-import { RecoilRoot } from 'recoil'
 
 // Client-side cache, shared for the whole session of the user in the browser.
 const clientSideEmotionCache = createEmotionCache()
@@ -26,14 +25,12 @@ const MyApp = ({
       </Head>
       <ThemeProvider theme={theme}>
         <CssBaseline />
-        <RecoilRoot>
-          <AppHeader>
-            <NavMenu />
-          </AppHeader>
-          <Container maxWidth="lg">
-            <Component {...pageProps} />
-          </Container>
-        </RecoilRoot>
+        <AppHeader>
+          <NavMenu />
+        </AppHeader>
+        <Container maxWidth="lg">
+          <Component {...pageProps} />
+        </Container>
       </ThemeProvider>
     </CacheProvider>
   )

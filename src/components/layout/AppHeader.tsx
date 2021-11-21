@@ -1,6 +1,7 @@
 import React from 'react'
-import { AppBar, Toolbar, Typography } from '@mui/material'
+import { AppBar, Toolbar, Button } from '@mui/material'
 import styles from './header.styles'
+import Link from 'next/link'
 
 type Props = {
   children?: React.ReactElement
@@ -9,10 +10,15 @@ type Props = {
 const AppHeader = ({ children }: Props) => {
   return (
     <AppBar position="sticky" elevation={0}>
-      <Toolbar>
-        <Typography data-cy="header-logo" variant="h6" component="div" sx={styles.logo}>
-          Objective Harmony
-        </Typography>
+      <Toolbar sx={styles.toolbar}>
+        <Link href="/" passHref>
+          <Button
+            data-cy="header-logo"
+            sx={styles.logo}
+          >
+            Objective Harmony
+          </Button>
+        </Link>
         {children}
       </Toolbar>
     </AppBar>

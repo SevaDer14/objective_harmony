@@ -36,4 +36,19 @@ describe('Displays Main Page', () => {
       cy.get('@homeTab').should('have.class', 'Mui-selected')
     })
   })
+
+  context('by accessing with header logo', () => {
+    beforeEach(() => {
+      cy.visit('/zen_explorer')
+      cy.get('[data-cy=header-logo]').click()
+    })
+
+    it('has correct route', () => {
+      cy.url().should('contain', '/')
+    })
+
+    it('highlights correct navigation tab', () => {
+      cy.get('@homeTab').should('have.class', 'Mui-selected')
+    })
+  })
 })

@@ -1,11 +1,11 @@
 import React from 'react'
 import { Typography, Box } from '@mui/material'
-import palette from '../theme/palette.theme'
+import styles from './pageHeader.styles'
 
 const PageHeader = ({ text }) => {
   return (
     <Box sx={styles.container}>
-      <Typography variant="h1" color="primary">
+      <Typography data-cy="page-header" variant="h1" color="primary">
         {text}
       </Typography>
     </Box>
@@ -13,11 +13,3 @@ const PageHeader = ({ text }) => {
 }
 
 export default PageHeader
-
-const styles = {
-  container: {
-    borderBottom: `3px solid ${palette.primary.semi}`,
-    padding: '2rem 0',
-    width: '100%',
-  },
-}

@@ -6,6 +6,7 @@ import { CacheProvider } from '@emotion/react'
 import theme from '../theme/theme'
 import createEmotionCache from '../createEmotionCache.js'
 import { Container } from '@mui/material'
+import Header from '../components/layout/Header'
 
 // Client-side cache, shared for the whole session of the user in the browser.
 const clientSideEmotionCache = createEmotionCache()
@@ -23,6 +24,7 @@ const MyApp = ({
       </Head>
       <ThemeProvider theme={theme}>
         <CssBaseline />
+        <Header logo='Objective Harmony'/>
         <Container maxWidth="lg">
           <Component {...pageProps} />
         </Container>

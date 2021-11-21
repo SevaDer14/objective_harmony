@@ -27,7 +27,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
-, "src/pages/_app.tsx", "src/pages/_document.tsx", "src/pages/index.tsx", "src/createEmotionCache.js"  ],
+, "src/pages/_app.tsx", "src/pages/_document.tsx", "src/pages/index.tsx", "src/createEmotionCache.js", "src/components/layout/header.styles.ts"  ],
   "exclude": [
     "node_modules"
   ]

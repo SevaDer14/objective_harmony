@@ -6,6 +6,6 @@ const styles = {
     padding: '2rem 0',
     width: '100%',
   },
-}
+} as const
 
 export default styles

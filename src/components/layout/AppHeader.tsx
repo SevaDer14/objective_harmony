@@ -11,7 +11,7 @@ const AppHeader = ({ logo, children }: Props) => {
   return (
     <AppBar position="sticky" elevation={0}>
       <Toolbar>
-        <Typography variant="h6" component="div" sx={styles.logo}>
+        <Typography data-cy="header-logo" variant="h6" component="div" sx={styles.logo}>
           {logo}
         </Typography>
         {children}

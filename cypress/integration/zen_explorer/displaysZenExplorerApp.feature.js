@@ -1,17 +1,18 @@
 describe('Displays "Zen Explorer" App', () => {
-  context('if accessed by route', () => {
-    beforeEach(() => {
-      cy.visit('/zen_explorer')
+  beforeEach(() => {
+    cy.visit('/zen_explorer')
+    cy.get('[data-cy=navigation-tabs]').within(() => {
+      cy.contains('Zen Explorer').as('zenExplorerTab')
     })
+  })
 
+  context('if accessed by route', () => {
     it('should display page header', () => {
       cy.get('[data-cy=page-header]').should('be.visible')
     })
 
     it('should highlight correct navigation tab', () => {
-      cy.get('[data-cy=navigation-tabs]').within(() => {
-        cy.contains('Zen Explorer').should('have.class', 'Mui-selected')
-      })
+      cy.get('@zenExplorerTab').should('have.class', 'Mui-selected')
     })
   })
 
@@ -26,22 +27,14 @@ describe('Displays "Zen Explorer" App', () => {
     })
 
     it('should highlight correct navigation tab', () => {
-      cy.get('[data-cy=navigation-tabs]').within(() => {
-        cy.contains('Zen Explorer').should('have.class', 'Mui-selected')
-      })
-    })
-
-    it('should display page header', () => {
-      cy.get('[data-cy=page-header]').should('be.visible')
+      cy.get('@zenExplorerTab').should('have.class', 'Mui-selected')
     })
   })
 
   context('if accessed by navigation menu from main page', () => {
     beforeEach(() => {
       cy.visit('/')
-      cy.get('[data-cy=navigation-tabs]').within(() => {
-        cy.contains('Zen Explorer').click()
-      })
+      cy.get('@zenExplorerTab').click()
     })
 
     it('should have correct route', () => {
@@ -49,13 +42,7 @@ describe('Displays "Zen Explorer" App', () => {
     })
 
     it('should highlight correct navigation tab', () => {
-      cy.get('[data-cy=navigation-tabs]').within(() => {
-        cy.contains('Zen Explorer').should('have.class', 'Mui-selected')
-      })
-    })
-
-    it('should display page header', () => {
-      cy.get('[data-cy=page-header]').should('be.visible')
+      cy.get('@zenExplorerTab').should('have.class', 'Mui-selected')
     })
   })
 })

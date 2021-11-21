@@ -18,14 +18,15 @@ const NavMenu = () => {
 
   return (
     <Tabs
+      data-cy="navigation-tabs"
       value={activeTab}
       onChange={handleChange}
       indicatorColor="primary"
       textColor="inherit"
       aria-label="navigation menu"
     >
-      {navigation.map((tab) => (
-        <NavTab href={tab.href} label={tab.label} />
+      {navigation.map((tab, index) => (
+        <NavTab href={tab.href} label={tab.label} key={`navTab-${index}`} />
       ))}
     </Tabs>
   )

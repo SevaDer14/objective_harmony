@@ -12,7 +12,7 @@ describe('displays "Zen Explorer" app on dedicated route', () => {
   context('access by cta on main page', () => {
     beforeEach(() => {
       cy.visit('/')
-      cy.get('[data-cy=zen-explorer-cta]').click()
+      cy.get("[data-cy='/zen_explorer-cta']").click()
     })
 
     it('displays page header', () => {

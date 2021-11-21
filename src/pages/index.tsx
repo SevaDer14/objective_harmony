@@ -1,6 +1,6 @@
-import { Button, Typography } from '@mui/material'
-import Link from 'next/link'
+import { Typography } from '@mui/material'
 import PageHeader from '../components/PageHeader'
+import Cta from '../components/Cta'
 
 const HomePage = () => {
   return (
@@ -9,11 +9,7 @@ const HomePage = () => {
       <Typography data-cy="description" variant="body1">
         The place for next generation microtonal and experimental music.
       </Typography>
-      <Link href="/zen_explorer" passHref>
-        <Button data-cy="zen-explorer-cta" variant="contained">
-          Zen Explorer
-        </Button>
-      </Link>
+      <Cta href="/zen_explorer">Zen Explorer</Cta>
     </>
   )
 }

@@ -6,6 +6,6 @@ describe('User Can See Main Page', () => {
   it('displays page header and content', () => {
     cy.get('[data-cy=page-header]').should('be.visible')
     cy.get('[data-cy=description]').should('be.visible')
-    cy.get('[data-cy=zen-explorer-cta]').should('be.visible')
+    cy.get("[data-cy='/zen_explorer-cta']").should('be.visible')
   })
 })

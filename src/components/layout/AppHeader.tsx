@@ -7,7 +7,7 @@ type Props = {
   children?: React.ReactElement
 }
 
-const Header = ({ logo, children }: Props) => {
+const AppHeader = ({ logo, children }: Props) => {
   return (
     <AppBar position="sticky" elevation={0}>
       <Toolbar>
@@ -20,4 +20,4 @@ const Header = ({ logo, children }: Props) => {
   )
 }
 
-export default Header
+export default AppHeader

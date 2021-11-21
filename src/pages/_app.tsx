@@ -3,10 +3,11 @@ import Head from 'next/head'
 import { ThemeProvider } from '@mui/material/styles'
 import CssBaseline from '@mui/material/CssBaseline'
 import { CacheProvider } from '@emotion/react'
-import theme from '../theme/theme'
-import createEmotionCache from '../createEmotionCache.js'
+import theme from 'src/theme/theme'
+import createEmotionCache from 'src/createEmotionCache.js'
 import { Container } from '@mui/material'
-import Header from '../components/layout/Header'
+import AppHeader from 'src/components/layout/AppHeader'
+import NavMenu from 'src/components/layout/NavMenu'
 
 // Client-side cache, shared for the whole session of the user in the browser.
 const clientSideEmotionCache = createEmotionCache()
@@ -24,7 +25,9 @@ const MyApp = ({
       </Head>
       <ThemeProvider theme={theme}>
         <CssBaseline />
-        <Header logo='Objective Harmony'/>
+        <AppHeader logo="Objective Harmony">
+          <NavMenu />
+        </AppHeader>
         <Container maxWidth="lg">
           <Component {...pageProps} />
         </Container>

@@ -1,4 +1,6 @@
-import React, { useState } from 'react'
+import React from 'react'
+import { useRecoilState } from 'recoil'
+import { activeTabState } from 'src/state/recoil/state'
 import { Tabs } from '@mui/material'
 import NavTab from 'src/components/NavTab'
 
@@ -8,15 +10,15 @@ const navigation = [
 ]
 
 const NavMenu = () => {
-  const [tab, setTab] = useState(0)
+  const [activeTab, setActiveTab] = useRecoilState(activeTabState)
 
   const handleChange = (event, newValue) => {
-    setTab(newValue)
+    setActiveTab(newValue)
   }
 
   return (
     <Tabs
-      value={tab}
+      value={activeTab}
       onChange={handleChange}
       indicatorColor="primary"
       textColor="inherit"

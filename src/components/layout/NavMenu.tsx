@@ -6,11 +6,10 @@ import { navigation, navigationTabs } from 'src/data/navigation'
 
 const NavMenu = () => {
   const { asPath } = useRouter()
-  const currentTab = navigation[asPath].value
-  const [activeTab, setActiveTab] = useState(currentTab)
+  const [activeTab, setActiveTab] = useState(0)
 
   useEffect(() => {
-    setActiveTab(currentTab)
+    setActiveTab(navigation[asPath].value)
   }, [asPath])
 
   return (

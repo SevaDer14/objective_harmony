@@ -8,7 +8,9 @@
     "start": "next start",
     "lint": "next lint",
     "cypress:open": "cypress open",
-    "test": "start-server-and-test start http://localhost:3000 cypress:open"
+    "cypress:run": "cypress run",
+    "test": "start-server-and-test dev http://localhost:3000 cypress:open",
+    "test:headless": "start-server-and-test dev http://localhost:3000 cypress:run"
   },
   "dependencies": {
     "@emotion/css": "^11.5.0",

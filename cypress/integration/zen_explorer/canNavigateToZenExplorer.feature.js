@@ -1,14 +1,11 @@
 describe('displays "Zen Explorer" app on dedicated route', () => {
-  let pageHeader = undefined
-
   context('access by route', () => {
     beforeEach(() => {
       cy.visit('/zen_explorer')
-      pageHeader = cy.contains('Zen Explorer')
     })
 
     it('displays page header', () => {
-      pageHeader.should('be.visible')
+      cy.get('[data-cy=page-header]').should('be.visible')
     })
   })
 
@@ -19,7 +16,7 @@ describe('displays "Zen Explorer" app on dedicated route', () => {
     })
 
     it('displays page header', () => {
-      pageHeader.should('be.visible')
+      cy.get('[data-cy=page-header]').should('be.visible')
     })
   })
 })

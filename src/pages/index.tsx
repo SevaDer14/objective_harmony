@@ -1,6 +1,6 @@
 import { Typography } from '@mui/material'
-import PageHeader from '../components/PageHeader'
-import Cta from '../components/Cta'
+import PageHeader from 'src/components/PageHeader'
+import Cta from 'src/components/Cta'
 
 const HomePage = () => {
   return (

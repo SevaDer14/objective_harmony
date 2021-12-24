@@ -6,8 +6,8 @@ import { CacheProvider } from '@emotion/react'
 import theme from 'src/theme/theme'
 import createEmotionCache from 'src/createEmotionCache.js'
 import { Container } from '@mui/material'
-import AppHeader from 'src/components/layout/AppHeader'
-import NavMenu from 'src/components/layout/NavMenu'
+import AppHeader from 'src/components/AppHeader/AppHeader'
+import NavMenu from 'src/components/AppHeader/NavMenu'
 
 // Client-side cache, shared for the whole session of the user in the browser.
 const clientSideEmotionCache = createEmotionCache()

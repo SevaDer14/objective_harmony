@@ -1,17 +1,25 @@
-import { red } from '@mui/material/colors'
+import * as colors from '@mui/material/colors'
 
 const palette = {
   primary: {
-    main: '#19B2FF',
-    semi: '#19B2FF44',
-    contrastText: '#fff',
+    main: colors.lightGreen.A700,
+    dark: colors.lightGreen[900],
+    glow: colors.lightGreen[800],
+    contrastText: colors.grey[900],
   },
   secondary: {
-    main: '#19857b',
-    contrastText: '#fff',
+    main: colors.amber[300],
+    saturated: colors.amber[700],
+    glow: colors.amber[800],
+    contrastText: colors.grey[900],
   },
   error: {
-    main: red.A400,
+    main: colors.red[200],
+  },
+  background: {
+    default: colors.grey[900],
+    contrast: colors.grey[50],
+    contrastSemi: colors.grey[800],
   },
 }
 

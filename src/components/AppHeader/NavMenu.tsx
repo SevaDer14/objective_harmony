@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 import { Tabs } from '@mui/material'
-import NavTab from 'src/components/NavTab'
+import NavTab from 'src/components/Site/NavTab'
 import { navigation, navigationTabs } from 'src/data/navigation'
 
 const NavMenu = () => {

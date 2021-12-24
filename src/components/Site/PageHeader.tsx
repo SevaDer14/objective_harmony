@@ -5,7 +5,7 @@ import styles from './pageHeader.styles'
 const PageHeader = ({ text }) => {
   return (
     <Box sx={styles.container}>
-      <Typography data-cy="page-header" variant="h1" color="primary">
+      <Typography data-cy="page-header" variant="h1" sx={styles.header}>
         {text}
       </Typography>
     </Box>

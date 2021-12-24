@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 import { Tabs } from '@mui/material'
-import NavTab from 'src/components/NavTab'
+import NavTab from 'src/components/Site/NavTab'
 import { navigation, navigationTabs } from 'src/data/navigation'
 
 const NavMenu = () => {
@@ -21,7 +21,7 @@ const NavMenu = () => {
       aria-label="navigation menu"
     >
       {navigationTabs.map((tab, index) => (
-        <NavTab href={tab.href} label={tab.label} key={`navTab-${index}`} />
+        <NavTab href={tab.href} label={tab.label} key={`navTab-${index}`} disableRipple/>
       ))}
     </Tabs>
   )

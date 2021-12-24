@@ -1,15 +1,20 @@
 import React from 'react'
-import { Button } from '@mui/material'
+import { Button, Box } from '@mui/material'
 import Link from 'next/link'
+import styles from './Cta.styles'
 
-const Cta = ({ href, children }) => {
+const Cta = ({ href, sx, children }) => {
   return (
-    <Link href={href} passHref>
-      <Button data-cy={`${href}-cta`} variant="contained" color="secondary">
-        {children}
-      </Button>
-    </Link>
+    <Box sx={sx}>
+      <Link href={href} passHref>
+        <Button data-cy={`${href}-cta`} variant="contained" sx={styles.cta}>
+          {children}
+        </Button>
+      </Link>
+    </Box>
   )
 }
 
 export default Cta
+
+

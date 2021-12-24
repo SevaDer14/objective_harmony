@@ -9,9 +9,15 @@ const HomePage = () => {
       <Typography data-cy="description" variant="body1">
         The place for next generation microtonal and experimental music.
       </Typography>
-      <Cta href="/zen_explorer">Zen Explorer</Cta>
+      <Cta href="/zen_explorer" sx={styles.heroCta}>Zen Explorer</Cta>
     </>
   )
 }
 
 export default HomePage
+
+const styles = {
+  heroCta: {
+    margin: '2rem 0'
+  }
+}

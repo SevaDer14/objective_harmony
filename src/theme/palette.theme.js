@@ -3,12 +3,13 @@ import * as colors from '@mui/material/colors'
 const palette = {
   primary: {
     main: colors.lightGreen.A700,
+    light: colors.lightGreen.A200,
     dark: colors.lightGreen[900],
     glow: colors.lightGreen[800],
     contrastText: colors.grey[900],
   },
   secondary: {
-    main: colors.amber[300],
+    main: colors.amber.A200,
     saturated: colors.amber[700],
     glow: colors.amber[800],
     contrastText: colors.grey[900],

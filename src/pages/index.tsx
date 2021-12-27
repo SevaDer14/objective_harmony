@@ -1,23 +1,14 @@
 import { Typography } from '@mui/material'
 import PageHeader from 'src/components/Site/PageHeader'
 import Cta from 'src/components/Site/Cta'
+import BasicSection from 'src/components/Sections/BasicSection'
 
 const HomePage = () => {
   return (
     <>
-      <PageHeader text="Objective Harmony" />
-      <Typography data-cy="description" variant="body1">
-        The place for next generation microtonal and experimental music.
-      </Typography>
-      <Cta href="/zen_explorer" sx={styles.heroCta}>Zen Explorer</Cta>
+      <BasicSection/>
     </>
   )
 }
 
 export default HomePage
-
-const styles = {
-  heroCta: {
-    margin: '2rem 0'
-  }
-}

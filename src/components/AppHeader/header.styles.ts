@@ -6,6 +6,8 @@ const styles = {
     flexDirection: 'row',
     justifyContent: 'space-between',
     color: palette.background.contrast,
+    width: '1200px',
+    margin: 'auto',
   },
   logo: {
     color: palette.background.contrast,

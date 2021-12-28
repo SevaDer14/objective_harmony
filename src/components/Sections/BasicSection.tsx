@@ -4,8 +4,8 @@ import PageHeader from 'src/components/Site/PageHeader'
 import palette from 'src/theme/palette.theme'
 
 interface SectionContent {
-  title?: string
-  body?: string
+  title: string
+  body: string
   image?: string
   cta?: {
     label: string
@@ -28,7 +28,7 @@ const BasicSection = ({ title, body, image, cta }: SectionContent) => {
           </Cta>}
         </Grid>
 
-        <Grid item xs={12} md={6}>{image}</Grid>
+        {image && <Grid item xs={12} md={6}>{image}</Grid>}
 
       </Grid>
     </Container>

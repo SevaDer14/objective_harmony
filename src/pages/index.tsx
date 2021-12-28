@@ -1,14 +1,38 @@
-import { Typography } from '@mui/material'
-import PageHeader from 'src/components/Site/PageHeader'
-import Cta from 'src/components/Site/Cta'
+// REFACTOR
+import { ApolloClient, InMemoryCache, gql } from '@apollo/client'
 import BasicSection from 'src/components/Sections/BasicSection'
 
-const HomePage = () => {
+const HomePage = ({ title, body }) => {
   return (
     <>
-      <BasicSection/>
+      <BasicSection title={title} body={body} />
     </>
   )
 }
 
 export default HomePage
+
+export const getStaticProps = async () => {
+  const client = new ApolloClient({
+    uri: process.env.API_URL,
+    cache: new InMemoryCache(),
+  })
+
+  const { data } = await client.query({
+    query: gql`
+      {
+        section(where: { id: "ckxoq2p142wqk0b13lidbsevp" }) {
+        title
+        body
+      }
+    }      
+    `,
+  })
+
+  return {
+    props: {
+      title: data?.section?.title,
+      body: data?.section?.body,
+    },
+  }
+}

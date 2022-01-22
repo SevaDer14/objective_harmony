@@ -11,6 +11,7 @@ const palette = {
   secondary: {
     main: colors.amber.A200,
     saturated: colors.amber[700],
+    dark: colors.amber[900],
     glow: colors.amber[800],
     contrastText: colors.grey[900],
   },

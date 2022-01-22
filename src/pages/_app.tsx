@@ -28,9 +28,7 @@ const MyApp = ({
         <AppHeader>
           <NavMenu />
         </AppHeader>
-        <Container maxWidth="lg">
-          <Component {...pageProps} />
-        </Container>
+        <Component {...pageProps} />
       </ThemeProvider>
     </CacheProvider>
   )

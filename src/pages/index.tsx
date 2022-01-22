@@ -1,23 +1,46 @@
-import { Typography } from '@mui/material'
-import PageHeader from 'src/components/Site/PageHeader'
-import Cta from 'src/components/Site/Cta'
+import { ApolloClient, InMemoryCache, gql } from '@apollo/client'
+import BasicSection from 'src/components/Sections/BasicSection'
 
-const HomePage = () => {
+const HomePage = ({ sections }) => {
   return (
     <>
-      <PageHeader text="Objective Harmony" />
-      <Typography data-cy="description" variant="body1">
-        The place for next generation microtonal and experimental music.
-      </Typography>
-      <Cta href="/zen_explorer" sx={styles.heroCta}>Zen Explorer</Cta>
+      {sections.map(({ title, body, name }) => (
+        <BasicSection title={title} body={body?.html} key={name}/>
+      ))}
     </>
   )
 }
 
 export default HomePage
 
-const styles = {
-  heroCta: {
-    margin: '2rem 0'
+export const getStaticProps = async () => {
+  const client = new ApolloClient({
+    uri: process.env.API_URL,
+    cache: new InMemoryCache(),
+  })
+
+  const { data } = await client.query({
+    query: gql`
+      {
+        view(where: { name: "home" }) {
+          name
+          sections {
+            ... on Section {
+              name
+              body {
+                html
+              }
+              title
+            }
+          }
+        }
+      }
+    `,
+  })
+
+  return {
+    props: {
+      sections: data?.view?.sections,
+    },
   }
 }

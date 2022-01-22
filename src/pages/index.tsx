@@ -1,11 +1,12 @@
-// REFACTOR
 import { ApolloClient, InMemoryCache, gql } from '@apollo/client'
 import BasicSection from 'src/components/Sections/BasicSection'
 
-const HomePage = ({ title, body }) => {
+const HomePage = ({ sections }) => {
   return (
     <>
-      <BasicSection title={title} body={body} />
+      {sections.map(({ title, body, name }) => (
+        <BasicSection title={title} body={body?.html} key={name}/>
+      ))}
     </>
   )
 }
@@ -21,18 +22,25 @@ export const getStaticProps = async () => {
   const { data } = await client.query({
     query: gql`
       {
-        section(where: { id: "ckxoq2p142wqk0b13lidbsevp" }) {
-        title
-        body
+        view(where: { name: "home" }) {
+          name
+          sections {
+            ... on Section {
+              name
+              body {
+                html
+              }
+              title
+            }
+          }
+        }
       }
-    }      
     `,
   })
 
   return {
     props: {
-      title: data?.section?.title,
-      body: data?.section?.body,
+      sections: data?.view?.sections,
     },
   }
 }
